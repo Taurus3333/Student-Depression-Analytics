@@ -19,12 +19,12 @@ This interactive Tableau dashboard analyzes factors contributing to student depr
 - Correlations between academic pressure and mental health.
 """)
 
-# Load Image from Project Directory
-image_path = "Analytics_Thumbnail.png"  # Ensure this file is in the same directory as app.py
-if os.path.exists(image_path):
-    st.image(image_path, caption='Student Depression Analytics Dashboard', use_container_width=True)
-else:
-    st.warning(f"Image not found: {image_path}")
+# # Load Image from Project Directory
+# image_path = "Analytics_Thumbnail.png"  # Ensure this file is in the same directory as app.py
+# if os.path.exists(image_path):
+#     st.image(image_path, caption='Student Depression Analytics Dashboard', use_container_width=True)
+# else:
+#     st.warning(f"Image not found: {image_path}")
 
 # Link to Tableau Dashboard
 st.markdown("""
