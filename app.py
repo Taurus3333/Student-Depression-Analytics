@@ -19,10 +19,6 @@ This interactive Tableau dashboard analyzes factors contributing to student depr
 - Correlations between academic pressure and mental health.
 """)
 
-# Debugging: Show current working directory & files
-st.write("Current Directory:", os.getcwd())
-st.write("Files in Directory:", os.listdir())
-
 # Load Image from Project Directory
 image_path = "Analytics_Thumbnail.png"  # Ensure this file is in the same directory as app.py
 if os.path.exists(image_path):
@@ -110,7 +106,7 @@ By identifying these triggers, educational institutions can implement **targeted
 """)
 
 # Download Section
-tableau_file = "Student_Depression_Analytics.twb"  # Ensure this file is in the same directory
+tableau_file = "Student Depression Analytics.twb"  # Ensure this file is in the same directory
 if os.path.exists(tableau_file):
     with open(tableau_file, 'rb') as f:
         st.download_button(label='Download Tableau Workbook', data=f, file_name='Student_Depression_Analytics.twb', mime='application/octet-stream')
