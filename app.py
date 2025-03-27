@@ -8,7 +8,7 @@ st.set_page_config(page_title='Student Depression Analytics', page_icon='📊', 
 st.title('📊 Student Depression Analytics Dashboard')
 
 # Display Thumbnail Image
-st.image('C:/Users/user/OneDrive - Fertis India Pvt. Ltd/Desktop/Analytics Thumbnail.png', caption='Student Depression Analytics Dashboard', use_container_width=True)
+st.image('Analytics Thumbnail.png', caption='Student Depression Analytics Dashboard', use_container_width=True)
 
 # Introduction
 st.markdown("""
