@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 # Set Page Title and Icon
 st.set_page_config(page_title='Student Depression Analytics', page_icon='📊', layout='wide')
@@ -17,6 +18,17 @@ This interactive Tableau dashboard analyzes factors contributing to student depr
 - Gender and age group breakdowns.
 - Correlations between academic pressure and mental health.
 """)
+
+# Debugging: Show current working directory & files
+st.write("Current Directory:", os.getcwd())
+st.write("Files in Directory:", os.listdir())
+
+# Load Image from Project Directory
+image_path = "Analytics_Thumbnail.png"  # Ensure this file is in the same directory as app.py
+if os.path.exists(image_path):
+    st.image(image_path, caption='Student Depression Analytics Dashboard', use_container_width=True)
+else:
+    st.warning(f"Image not found: {image_path}")
 
 # Link to Tableau Dashboard
 st.markdown("""
@@ -98,9 +110,12 @@ By identifying these triggers, educational institutions can implement **targeted
 """)
 
 # Download Section
-st.header('📥 Download the Tableau Workbook')
-st.markdown("Download the Tableau file to explore the data in detail.")
-st.download_button(label='Download Tableau Workbook', data=open('C:/Users/user/OneDrive - Fertis India Pvt. Ltd/Desktop/Student Depression Analytics.twb', 'rb').read(), file_name='Student_Depression_Analytics.twb', mime='application/octet-stream')
+tableau_file = "Student_Depression_Analytics.twb"  # Ensure this file is in the same directory
+if os.path.exists(tableau_file):
+    with open(tableau_file, 'rb') as f:
+        st.download_button(label='Download Tableau Workbook', data=f, file_name='Student_Depression_Analytics.twb', mime='application/octet-stream')
+else:
+    st.warning(f"Tableau file not found: {tableau_file}")
 
 # Footer
 st.markdown("---")
